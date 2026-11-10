@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bbonqni3qvpqr"]
+
+[ext_resource type="Script" uid="uid://corjujr1kf0l8" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://c7iycptp7uq3m" path="res://assets/sounds/freesound_community-gun-laser-single-shot-sci-fi-102814.mp3" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://captkxtyrnx50" path="res://assets/ships/Player spaceship.png" id="3_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mti6b"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1414596473 groups=["player"]]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800203450]
+shape = SubResource("CircleShape2D_mti6b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=477726356 groups=["player"]]
+stream = ExtResource("2_g2els")
+bus = &"SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1694738451]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_qhqgy")

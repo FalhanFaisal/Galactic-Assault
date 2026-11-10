@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dkjso5duj06mi"]
+
+[ext_resource type="Script" uid="uid://bc1l0bwfdgown" path="res://scripts/special_enemy.gd" id="1_bglix"]
+[ext_resource type="Texture2D" uid="uid://d1sl8ssa2q06v" path="res://assets/enemies/Special enemy.png" id="2_c10cq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 35.0
+
+[node name="SpecialEnemy" type="Area2D" unique_id=887071334 groups=["enemies"]]
+script = ExtResource("1_bglix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=694903090]
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1466910302]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_c10cq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

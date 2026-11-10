@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dr0snad75lctl"]
+
+[ext_resource type="Script" uid="uid://c4hc0kcovo64y" path="res://scripts/shooting_enemy.gd" id="1_v82wq"]
+[ext_resource type="Texture2D" uid="uid://d1sl8ssa2q06v" path="res://assets/enemies/Special enemy.png" id="2_7tkxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 30.0
+
+[node name="ShootingEnemy" type="Area2D" unique_id=452672561 groups=["enemies", "shooting_enemies"]]
+script = ExtResource("1_v82wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=495651181]
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161853143]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_7tkxy")

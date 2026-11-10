@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dvjuwd3s8tcks"]
+
+[ext_resource type="Script" uid="uid://duap375n7205t" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="PackedScene" uid="uid://cdako17gspceu" path="res://scenes/settings.tscn" id="2_myx47"]
+
+[node name="PauseMenu" type="Control" unique_id=194921818]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n87rw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=754674692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.043137256, 0.12156863, 1)
+
+[node name="PauseTitle" type="Label" parent="." unique_id=137149963]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 150.0
+offset_right = 1040.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 48
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="." unique_id=554514114]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 300.0
+offset_right = 790.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 32
+text = "RESUME"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=1478753398]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 390.0
+offset_right = 790.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 26
+text = "SETTINGS"
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=755582967]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 480.0
+offset_right = 790.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 28
+text = "MAIN MENU"
+
+[node name="Settings" parent="." unique_id=709475815 instance=ExtResource("2_myx47")]
+visible = false
+layout_mode = 1

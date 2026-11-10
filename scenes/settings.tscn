@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cdako17gspceu"]
+
+[ext_resource type="Script" uid="uid://coelo2qy7wjos" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Control" unique_id=709475815]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=791246468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.043137256, 0.12156863, 1)
+
+[node name="SettingsTitle" type="Label" parent="." unique_id=1898806346]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 165.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="." unique_id=85098405]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 260.0
+offset_right = 940.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 28
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=1609308079]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 320.0
+offset_right = 890.0
+offset_bottom = 360.0
+value = 70.0
+
+[node name="SoundLabel" type="Label" parent="." unique_id=1059878810]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 410.0
+offset_right = 940.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 28
+text = "Sound Effects Volume"
+
+[node name="SoundSlider" type="HSlider" parent="." unique_id=1832270690]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 470.0
+offset_right = 890.0
+offset_bottom = 510.0
+value = 70.0
+
+[node name="BackButton" type="Button" parent="." unique_id=861470055]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 560.0
+offset_right = 790.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 28
+text = "BACK"
+
+[node name="ResetScoreButton" type="Button" parent="." unique_id=613019393]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -215.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "RESET SCORE"
+
+[node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=1417259848]
+oversampling_override = 1.0
+title = "RESET HIGH SCORE?"
+position = Vector2i(0, 36)
+size = Vector2i(407, 100)
+dialog_text = "Are you sure you want to reset your highest score?"
+
+[connection signal="confirmed" from="ResetConfirmationDialog" to="." method="_on_reset_confirmation_dialog_confirmed"]

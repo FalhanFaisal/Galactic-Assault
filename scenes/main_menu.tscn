@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://btarxtt1kjayt"]
+
+[ext_resource type="Script" uid="uid://d3gy1pxnu350e" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1071341425]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1957851314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.043137256, 0.12156863, 1)
+
+[node name="GameTitle" type="Label" parent="." unique_id=464947763]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 100.0
+offset_right = 1040.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 44
+text = "GALACTIC ASSAULT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=1527807263]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 310.0
+offset_right = 790.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="." unique_id=764623387]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 400.0
+offset_right = 790.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 28
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="." unique_id=391115544]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 490.0
+offset_right = 790.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 28
+text = "QUIT"
+
+[node name="Subtitle" type="Label" parent="." unique_id=2034883865]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 195.0
+offset_right = 1040.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 24
+text = "DEFEND THE GALAXY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=1526052664]
+layout_mode = 1
+offset_left = 550.0
+offset_top = 255.0
+offset_right = 950.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 24
+text = "HIGH SCORE: 0"

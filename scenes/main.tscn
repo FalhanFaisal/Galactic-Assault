@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://rmd3bbai8b57"]
+
+[ext_resource type="Script" uid="uid://siusf1lggi1j" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bbonqni3qvpqr" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dcfekw8bufv1t" path="res://scripts/scrolling_background.gd" id="2_choun"]
+[ext_resource type="Script" uid="uid://bu1edj83vkfeu" path="res://scripts/stars.gd" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c8205wvgm4j1m" path="res://assets/backgrounds/galaxy_background.png" id="3_choun"]
+[ext_resource type="Script" uid="uid://b6omds5b3v8s0" path="res://scripts/hud.gd" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://cs7rkp0uehvoy" path="res://assets/sounds/soundreality-explosion-8-bit-10-314692.mp3" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://captkxtyrnx50" path="res://assets/ships/Player spaceship.png" id="5_tipki"]
+[ext_resource type="AudioStream" uid="uid://ot172qcfem2c" path="res://assets/sounds/audiopapkin-ambient-soundscapes-007-space-atmosphere-304974.mp3" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dvjuwd3s8tcks" path="res://scenes/pause_menu.tscn" id="7_o6xl0"]
+
+[node name="Main" type="Node2D" unique_id=1708078532]
+script = ExtResource("1_0wfyh")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1074386293]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.019607844, 0.043137256, 0.12156863, 1)
+script = ExtResource("2_choun")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1361108129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -450.0
+offset_right = 1280.0
+offset_bottom = 1086.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_choun")
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=1047223765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1426.0
+offset_right = 1280.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_choun")
+stretch_mode = 6
+
+[node name="Stars" type="Node2D" parent="." unique_id=836313894]
+script = ExtResource("2_jyhfs")
+
+[node name="Player" parent="." unique_id=1414596473 instance=ExtResource("1_o5qli")]
+position = Vector2(640, 360)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1178744379]
+script = ExtResource("3_sugp2")
+
+[node name="Label" type="Label" parent="HUD" unique_id=1789020687]
+visible = false
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 75.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 20
+text = "Health: 3"
+
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=1516701185]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -141.0
+offset_right = 200.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="HUD" unique_id=1376444881]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = 95.0
+offset_right = 100.5
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "RESTART"
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=635359731]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 2.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 22
+text = "Score: 0"
+
+[node name="HighScoreLabel" type="Label" parent="HUD" unique_id=217252938]
+offset_left = 945.0
+offset_top = 2.0
+offset_right = 1145.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 20
+text = "HIGH SCORE: 0"
+
+[node name="LifeIcon1" type="TextureRect" parent="HUD" unique_id=1827366600]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 65.0
+offset_bottom = 65.0
+texture = ExtResource("5_tipki")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LifeIcon2" type="TextureRect" parent="HUD" unique_id=1265853686]
+offset_left = 70.0
+offset_top = 30.0
+offset_right = 105.0
+offset_bottom = 65.0
+texture = ExtResource("5_tipki")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LifeIcon3" type="TextureRect" parent="HUD" unique_id=757406130]
+offset_left = 110.0
+offset_top = 30.0
+offset_right = 145.0
+offset_bottom = 65.0
+texture = ExtResource("5_tipki")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MainMenuButton" type="Button" parent="HUD" unique_id=2104454834]
+visible = false
+offset_left = 515.0
+offset_top = 550.0
+offset_right = 772.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 24
+text = "BACK TO MAIN MENU"
+
+[node name="FinalScoreLabel" type="Label" parent="HUD" unique_id=1300726543]
+visible = false
+offset_left = 440.0
+offset_top = 335.0
+offset_right = 840.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 26
+text = "FINAL SCORE: 0"
+horizontal_alignment = 1
+
+[node name="FinalHighScoreLabel" type="Label" parent="HUD" unique_id=12166421]
+visible = false
+offset_left = 440.0
+offset_top = 400.0
+offset_right = 840.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 28
+text = "HIGHEST SCORE: 0"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2083403676]
+stream = ExtResource("5_tbgi4")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1637555062 groups=["player"]]
+stream = ExtResource("6_tefeu")
+bus = &"Music"
+
+[node name="PauseMenu" parent="." unique_id=194921818 instance=ExtResource("7_o6xl0")]
+visible = false
+z_index = 100
+
+[connection signal="pressed" from="HUD/RestartButton" to="HUD" method="_on_restart_button_pressed"]
